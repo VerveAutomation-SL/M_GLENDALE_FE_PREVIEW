@@ -11,11 +11,16 @@ const PreviewButton = () => {
 
   return (
     <button
-      className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg"
+      className="flex items-center gap-1 sm:gap-2 md:gap-3
+                text-[10px] sm:text-sm md:text-base
+                px-1 sm:px-3 md:px-3 lg:px-3
+                py-1 sm:py-2
+                bg-purple-600 hover:bg-purple-700 
+                rounded-lg transition-all duration-200"
       onClick={onClick}
     >
-      <Presentation className="w-4 h-4" />
-      Figma Preview
+      <Presentation className="w-2 h-2 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+      <span className="whitespace-nowrap">Figma Preview</span>
     </button>
   );
 };
