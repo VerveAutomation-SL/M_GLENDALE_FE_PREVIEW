@@ -1,6 +1,6 @@
 import React from "react";
 import type { PageType } from "@/types/pageContents";
-import PreviewButton from "./previewButton";
+// import PreviewButton from "./previewButton";
 import { navItems } from "@/types/pageContents";
 
 interface NavBarProps {
@@ -20,9 +20,11 @@ const NavBar = ({ activePage, onPageChange }: NavBarProps) => {
               <button
                 key={item.key}
                 className={`flex items-center gap-2 
-                            p-1 sm:p-3 md:p-2
+                            p-1 sm:p-3 md:p-2 
+                            text-sm sm:text-lg 
                             rounded-lg hover:bg-gray-400
-                            transition-all duration-400 ${
+                            transition-all duration-400
+                            mx-auto ${
                               activePage === item.key
                                 ? "bg-gray-200 text-black"
                                 : "bg-transparent text-gray-500"
@@ -30,16 +32,14 @@ const NavBar = ({ activePage, onPageChange }: NavBarProps) => {
                 onClick={() => onPageChange(item.key)}
               >
                 <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="hidden lg:inline">{item.label}</span>
+                <span className="lg:inline">{item.label}</span> {/* hidden */}
               </button>
             );
           })}
         </div>
 
         {/* Figma Preview Button (Right) */}
-        <div>
-          <PreviewButton />
-        </div>
+        <div>{/* <PreviewButton /> */}</div>
       </div>
     </nav>
   );
